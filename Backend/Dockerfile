@@ -9,4 +9,5 @@ WORKDIR /home/app/webapp
 COPY ./ /home/app/webapp/
 # RUN apt-get update
 # RUN pip install --upgrade pip
+COPY ./requirements.txt /home/app/webapp/
 RUN pip install -r /home/app/webapp/requirements.txt
