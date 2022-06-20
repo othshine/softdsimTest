@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    branches: devopstest
+    branches: DevOps
 
 jobs:
   login:
