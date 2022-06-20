@@ -27,5 +27,5 @@ jobs:
           context: .
           file: ./Backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
        
