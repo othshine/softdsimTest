@@ -1,4 +1,4 @@
-FROM python:3.11.0b1-slim-buster
+FROM python:3.10.5-slim-bullseye
 RUN apt-get update
 RUN apt-get -y install default-libmysqlclient-dev
 RUN apt-get -y install gcc
