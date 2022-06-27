@@ -31,8 +31,7 @@ jobs:
       -
         name: Scan the Container 
         uses: snyk/actions/docker@master
-        env:
-        SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
+        env: SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
         image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
         args: --file=Dockerfile
