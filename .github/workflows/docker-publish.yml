@@ -31,14 +31,15 @@ jobs:
       -
         name: Scan the Container 
         uses: snyk/actions/docker@master
-        env: SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        env: 
+         SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
         with:
-        image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
-        args: --file=Dockerfile
+          image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
+          args: --file=Dockerfile
       -
         name: Upload Container Scan results to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
         with:
-        sarif_file: snyk.sarif
+              sarif_file: snyk.sarif
                 
        
