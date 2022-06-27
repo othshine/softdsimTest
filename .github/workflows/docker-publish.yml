@@ -36,9 +36,13 @@ jobs:
         with:
           image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
           args: --file= ./Backend/Dockerfile
-                --file= sarif-file-output=snyk.sarif
-      - uses: github/codeql-action/upload-sarif@v1
+                --sarif-file-output=./Backend/docker.snyk.sarif
+          sarif: false
+      - 
+        name: Upload sarif file to Github Code Scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v1
         with:
-         sarif_file: snyk.sarif
+          sarif_file: ./Backend
                 
        
