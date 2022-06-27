@@ -36,10 +36,7 @@ jobs:
         with:
           image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
           args: --file= ./Backend/Dockerfile
-      - uses: garethr/snyk-to-sarif@master
-      - 
-        name: Upload the SARIF file
-        uses: github/codeql-action/upload-sarif@v1
+      - uses: github/codeql-action/upload-sarif@v1
         with:
          sarif_file: snyk.sarif
                 
