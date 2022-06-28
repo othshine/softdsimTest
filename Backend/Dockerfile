@@ -8,5 +8,5 @@ WORKDIR /home/app/webapp
 # Install requirements
 # RUN apt-get update
 # RUN pip install --upgrade pip
-COPY ./Backend/requirements.txt /home/app/webapp/
+COPY /requirements.txt /home/app/webapp/
 RUN pip install -r /home/app/webapp/requirements.txt
