@@ -36,7 +36,7 @@ jobs:
         with:
           image: ${{ secrets.DOCKER_HUB_USERNAME }}/backend.test:latest
           args: --file= ./Backend/Dockerfile
-                --sarif-file-output=./Backend/docker.snyk.sarif
+                --sarif-file-output=./Backend/dockersnyk.sarif
           sarif: false
       - 
         name: Upload sarif file to Github Code Scanning
