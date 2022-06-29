@@ -10,7 +10,7 @@ jobs:
     - name: Build a Docker image
       run: docker build -t softdsim/backend ./Backend
     - name: Run Snyk to check Docker image for vulnerabilities
-      id: Vulneberalities Backend
+      id: vulneberalities-backend
       continue-on-error: true
       uses: snyk/actions/docker@master
       env:
