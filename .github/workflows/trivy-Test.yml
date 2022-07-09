@@ -12,11 +12,11 @@ jobs:
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t softdsim/Backend:scan ./Backend
+          docker build -t softdsim/backend:scan ./Backend
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'Softdsim/Backend:scan'
+          image-ref: 'softdsim/backend:scan'
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
