@@ -34,12 +34,12 @@ jobs:
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
-           id: Backend
+           category: Backend
            sarif_file: 'trivy-results-backend.sarif'
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
-           id: frontend
+           category: frontend
            sarif_file: 'trivy-results-frontend.sarif'
            
           
