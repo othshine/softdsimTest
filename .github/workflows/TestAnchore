@@ -1,0 +1,20 @@
+name: Anchore Test
+on: 
+ push:
+  branches: DevOps
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Container image
+        run: docker build -t softdsim/backend:scan ./Backend
+      - uses: anchore/scan-action@v3
+        id: scan
+        with:
+          image: "softdsim/backend:scan"
+          acs-report-enable: true
+      - name: upload Anchore scan SARIF report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
