@@ -10,11 +10,12 @@ jobs:
       - name: Build the Container image
         run: docker build -t softdsim/backend:scan ./Backend
       - uses: anchore/scan-action@v3
-        id: scan
+        id: scan Backend
         with:
           image: "softdsim/backend:scan"
           acs-report-enable: true
           severity-cutoff: "critical"
+          fail-build: false          
       - name: upload Anchore scan SARIF report
         uses: github/codeql-action/upload-sarif@v2
         with:
