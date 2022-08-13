@@ -10,7 +10,7 @@ jobs:
       - name: Build the Container image
         run: docker build -t softdsim/backend:scan ./Backend
       - uses: anchore/scan-action@v3
-        id: scan Backend
+        id: scan
         with:
           image: "softdsim/backend:scan"
           acs-report-enable: true
