@@ -11,13 +11,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Build an image from Dockerfile
         run: |
-          docker build -t softdsim/fronttrivy:scan ./frontend
+          docker build -t softdsim/trivy:scan ./frontend
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'softdsim/fronttrivy:scan'
-          ignore-unfixed: true
+          image-ref: 'softdsim/trivy:scan'
           format: 'sarif'
           output: 'trivy-results-frontend.sarif'
       
