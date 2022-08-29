@@ -8,11 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Container image
-        run: docker build -t softdsim/backend:scan ./Backend
+        run: docker build -t softdsim/frontanchore ./frontend
       - uses: anchore/scan-action@v3
         id: scan
         with:
-          image: "softdsim/backend:scan"
+          image: "softdsim/frontanchore"
           acs-report-enable: true
           fail-build: false       
       - name: upload Anchore scan SARIF report
